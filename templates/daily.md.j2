@@ -1,0 +1,20 @@
+# 📅 Assignments for {{ today_date }}
+
+## 🔹 Due Today
+{% for a in due_today %}
+- [ ] **{{ a.course_name }} - {{ a.title }}** ({{ a.relative_due }}){% if a.url %} — [open]({{ a.url }}){% endif %}
+{% endfor %}
+{% if due_today|length == 0 %}
+- _None_
+{% endif %}
+
+## 🔹 Upcoming (Next 7 Days)
+{% for a in upcoming %}
+- [ ] **{{ a.course_name }} - {{ a.title }}** ({{ a.relative_due }}){% if a.url %} — [open]({{ a.url }}){% endif %}
+{% endfor %}
+{% if upcoming|length == 0 %}
+- _None_
+{% endif %}
+
+---
+🔁 Unfinished tasks from yesterday are carried over automatically.

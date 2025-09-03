@@ -1,0 +1,12 @@
+# 📚 Master Assignment Log
+
+{% for month, items in by_month.items() %}
+## {{ month }}
+{% for a in items %}
+- [ ] **{{ a.course_name }} - {{ a.title }}** ({{ a.relative_due }}){% if a.url %} — [open]({{ a.url }}){% endif %}
+{% endfor %}
+{% if items|length == 0 %}
+- _None_
+{% endif %}
+
+{% endfor %}
